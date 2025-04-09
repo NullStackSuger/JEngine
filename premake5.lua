@@ -18,6 +18,9 @@ project "JEngine"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+    pchheader "hzpch.h"
+    pchsource "JEngine/src/hzpch.cpp"
+
     files
     {
         "%{prj.name}/src/**.h",
@@ -26,6 +29,7 @@ project "JEngine"
 
     includedirs
     {
+        "../JEngine/JEngine/src",
         "../JEngine/JEngine/vendor/spdlog/include"
     }
 
